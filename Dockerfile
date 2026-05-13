@@ -1,4 +1,6 @@
-FROM nats:latest
+FROM nats:alpine
+
+RUN apk add --no-cache gettext
 
 COPY --chmod=755 nats-server.conf.template /etc/nats/nats-server.conf.template
 COPY --chmod=755 docker-entrypoint.sh /docker-entrypoint.sh
