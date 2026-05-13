@@ -1,7 +1,7 @@
 FROM nats:latest
 
-COPY nats-server.conf.template /etc/nats/nats-server.conf.template
-COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY --chmod=755 nats-server.conf.template /etc/nats/nats-server.conf.template
+COPY --chmod=755 docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN chmod +x /docker-entrypoint.sh
 
